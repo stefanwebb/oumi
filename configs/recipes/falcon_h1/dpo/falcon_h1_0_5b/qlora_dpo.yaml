@@ -44,4 +44,3 @@ peft:
     - "o_proj"
     - "gate_proj"
     - "up_proj"
-    - "down_proj"
