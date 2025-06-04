@@ -23,7 +23,7 @@ data:
       - dataset_name: "HumanLLMs/Human-Like-DPO-Dataset"
 
 training:
-  optimizer: "adamw_torch"
+  optimizer: "adamw_torch_fused"
   use_peft: true
   output_dir: "output/falcon-e-1b.dpo"
   trainer_type: "TRL_DPO"
