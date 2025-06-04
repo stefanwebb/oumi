@@ -232,7 +232,7 @@ class PeftParams(BaseParams):
     """
 
     llm_int8_skip_modules: Optional[list[str]] = field(
-        default=[],
+        default=None,
         metadata={"help": "Modules that we do not want to convert in 8-bit"},
     )
     """ An explicit list of the modules that we do not want to convert in 8-bit.
