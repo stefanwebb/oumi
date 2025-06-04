@@ -20,7 +20,7 @@ model:
 data:
   train:
     datasets:
-      - dataset_name: "mlabonne/orpo-dpo-mix-40k"
+      - dataset_name: "HumanLLMs/Human-Like-DPO-Dataset"
 
 training:
   optimizer: "adamw_torch"
