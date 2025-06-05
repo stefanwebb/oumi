@@ -2,7 +2,7 @@
 
 ## Summary
 
-Configs for TII's Falcon-E model family. See the [official blog post](https://falcon-lm.github.io/blog/falcon-edge/) and [GitHub page](https://github.com/tiiuae/Falcon-H1) for technical details, benchmarks, **SFT** and **DPO** settings, and throughput comparisons.
+Configs for TII's Falcon-E model family. See the [official blog post](https://falcon-lm.github.io/blog/falcon-edge/) for technical details, benchmarks, **SFT** and **DPO** settings, and throughput comparisons.
 
 All models are supported in both **native** and **VLLM** inference modes. Models in this family include:
 
