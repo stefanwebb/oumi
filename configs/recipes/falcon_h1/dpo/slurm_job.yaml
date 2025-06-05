@@ -1,0 +1,20 @@
+name: falcon-dpo-qlora
+user: stefan
+resources:
+  cloud: slurm
+
+# Upload working directory to remote.
+# If on the local cloud, we CD into the working directory before running the job.
+working_dir: .
+
+setup: |
+  #SBATCH --ntasks=1
+  #SBATCH --cpus-per-task=1
+
+run: |
+  set -e  # Exit if any command failed.
+  nodes=($( scontrol show hostnames $SLURM_JOB_NODELIST ) )
+  echo "Hello World"
+  echo "${nodes[@]}"
+  echo "Hello Error" 1>&2
+  oumi train -c configs/recipes/falcon_h1/dpo/falcon_h1_0_5b/qlora_dpo.yaml
