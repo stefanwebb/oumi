@@ -10,6 +10,7 @@ working_dir: .
 setup: |
   #SBATCH --ntasks=1
   #SBATCH --cpus-per-task=1
+  conda activate oumi-new
 
 run: |
   set -e  # Exit if any command failed.
