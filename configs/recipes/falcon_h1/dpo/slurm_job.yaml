@@ -8,8 +8,11 @@ resources:
 working_dir: .
 
 setup: |
+  #SBATCH --nodes=1
   #SBATCH --ntasks=1
-  #SBATCH --cpus-per-task=1
+  #SBATCH --cpus-per-task=2
+  #SBATCH --gpus-per-task=1
+  source ~/miniconda3/etc/profile.d/conda.sh
   conda activate oumi-new
 
 run: |
