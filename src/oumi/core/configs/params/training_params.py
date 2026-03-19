@@ -13,6 +13,7 @@
 # limitations under the License.
 
 import copy
+import os
 from dataclasses import dataclass, field
 from enum import Enum
 from pathlib import Path
@@ -886,10 +887,14 @@ class TrainingParams(BaseParams):
                 )
             trainer_kwargs.update(gold_kwargs)
 
+        # Set TENSORBOARD_LOGGING_DIR env var for TensorBoard logging
+        if self.enable_tensorboard:
+            tensorboard_dir = self.logging_dir or f"{self.output_dir}/tensorboard"
+            os.environ["TENSORBOARD_LOGGING_DIR"] = tensorboard_dir
+
         result = config_class(
             gradient_accumulation_steps=self.gradient_accumulation_steps,
             log_level=self.dep_log_level,
-            logging_dir=self.logging_dir,
             logging_nan_inf_filter=True,
             logging_steps=self.logging_steps,
             logging_strategy=self.logging_strategy,
